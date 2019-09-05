@@ -55,6 +55,7 @@ A reasonable person would count a bunch of money and scale it up.
 
 https://github.com/harterrt/conference-talks/
 
+
 ```python
 import pandas as pd
 
@@ -65,6 +66,19 @@ print('Number of bills in pile: {0}\n'.format(len(pile)))
 
 print('Sample values:\n {0} \n'.format(pile[10:15].to_string(index=False)))
 ```
+
+    Number of bills in pile: 90600
+    
+    Sample values:
+      denomination
+               20
+               50
+               20
+               20
+               10 
+    
+
+
 ---
 
 # The Plan
@@ -81,6 +95,7 @@ I got a random selection of ~90k bills of varying denominations.
 ---
 # Sample - Results
 
+
 ```python
 bills_per_pound = 450
 
@@ -95,6 +110,13 @@ print(
   .format((sample_value * 200 / pile_value - 1) * 100)
 )
 ```
+
+    Sample value: $16,817
+    Estimated population value: $3,363,400
+    Actual population value   : $3,566,992
+    
+    Error: -5.71%
+
 
 ---
 # Sample - Posibilities?
