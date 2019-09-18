@@ -18,6 +18,16 @@ def get_resample_distribution():
     }))
 
 
+def join_distributions():
+    resampled = get_resample_distribution()
+    resampled['type'] = 'bootstrapped'
+
+    sampled = sample.get_estimate_distribution()
+    sampled['type'] = 'sampled'
+
+    return(pd.unionAll(resampled, sampled))
+
+
 if __name__ == '__main__':
     (
         sample.plot_estimate_distribution(get_resample_distribution())

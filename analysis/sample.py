@@ -18,6 +18,7 @@ def get_estimate_distribution():
 
 
 def plot_estimate_distribution(dist):
+    print(dist.quantile([0.05, 0.95]))
     return(pn.ggplot(dist, pn.aes(x='estimates')) + pn.geom_histogram())
 
 
