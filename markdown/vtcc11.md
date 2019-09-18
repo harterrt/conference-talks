@@ -1,10 +1,8 @@
-background-color: black
 class: center, middle, title
 
 # Common Sense Stats: Bootstrapping
 
-**Ryan Harter**
-
+.highlight[**Ryan Harter**] - 
 Senior Staff Data Scientist, Mozilla
 
 ---

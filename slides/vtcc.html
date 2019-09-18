@@ -5,25 +5,36 @@
     <meta charset="utf-8">
     <style>
       @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
-      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic);
       @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+      @import url(colors.css);
 
-      body { font-family: 'Droid Serif'; }
+      body { font-family: 'PT Sans'; }
       h1, h2, h3 {
         font-family: 'Yanone Kaffeesatz';
         font-weight: normal;
       }
       .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
-      .red {color: red;}
+      .body {
+        background-color: #BAB8B7;
+        color: #070505;
+      }
       .title {
-        background-color: black;
-        color: white;
+        color: #BAB8B7;
+        background-color: #070505;
+      }
+			h1 {
+          font-weight: bold;
+          box-shadow: inset 0 -3px 0 #FF500B;
+			}
+      .highlight {
+        font-weight: bold;
       }
     </style>
   </head>
   <body>
     <textarea id="source"></textarea>
-    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    <script src="static/remark.min.js">
     </script>
     <script>
       var slideshow = remark.create({sourceUrl: 'rendered.md'});

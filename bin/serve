@@ -2,6 +2,7 @@
 
 from livereload import Server, shell
 server = Server()
+server.watch('slides')
 server.watch(
     'markdown/*.md',
     shell('bin/precompile')
