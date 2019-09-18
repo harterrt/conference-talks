@@ -98,19 +98,14 @@ print(
 # Sample - Posibilities?
 
 * What does the risk look like?
-* We have an advantage of seeing everything
-
-???
-
-TODO: insert code for drawing lots of samples
+* What if we did this 1000 times?
+* We have an advantage of seeing everything...
 
 ---
 
 # Sample - Simulation
 
-???
-
-TODO: Show histogram of sampling errors
+.center[<img src='static/distribution.png'></img>]
 
 ---
 
@@ -126,3 +121,9 @@ TODO: Show histogram of sampling errors
 
 * What if we re-use our sample?
 * Contains all we know about the population
+
+---
+
+# Bootstrapping
+
+.center[<img src='static/bootstrap.png'></img>]

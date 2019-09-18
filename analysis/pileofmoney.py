@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import analysis.utils as utils
 
 def get_pile(pounds, seed=42):
     """Returns a list of bill denominations comprising `pounds` of US bills """
@@ -19,8 +20,7 @@ def get_pile(pounds, seed=42):
 
     # Pull actuall bill counts for pile.
     counts = np.random.multinomial(
-        # A bill ways a gram, 453 grams per pound
-        453 * pounds,
+        utils.bills_per_pound * pounds,
         list(denominations.values())
     )
 
@@ -36,5 +36,5 @@ if __name__ == '__main__':
         .DataFrame({
             'denomination': get_pile(200),
         })
-        .to_csv('data/pile_of_money.csv', index=False)
+        .to_csv(utils.pile_path, index=False)
     )
