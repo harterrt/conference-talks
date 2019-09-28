@@ -10,12 +10,20 @@ def resample(sample, seed):
     return(estimate)
 
 
-def get_resample_distribution():
-    sample = utils.read_pile().sample(utils.bills_per_pound, random_state=42)
 
+def get_resample_distribution(sample):
     return(pd.DataFrame({
         'estimates': [resample(sample, x) for x in range(1000)]
     }))
+
+def get_bs_sim():
+    pile = utils.read_pile()
+    samp = pile.sample(utils.bills_per_pound, random_state=42)
+
+    dist = get_resample_distribution(samp)
+    plot = sample.plot_estimate_distribution(dist)
+
+    return(pile)
 
 
 def join_distributions():
@@ -29,8 +37,16 @@ def join_distributions():
 
 
 if __name__ == '__main__':
+    pile = utils.read_pile()
+    samp = pile.sample(utils.bills_per_pound, random_state=42)
+    dist = get_resample_distribution(samp)
+
     (
-        sample.plot_estimate_distribution(get_resample_distribution())
+        sample.plot_estimate_distribution(dist)
         .save('slides/static/bootstrap.png')
+    )
+    (
+        sample.plot_dist_with_ci(dist)
+        .save('slides/static/bootstrap_ci.png')
     )
 
