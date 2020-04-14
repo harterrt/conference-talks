@@ -1,4 +1,4 @@
 #!/bin/sh
 
-jupytext markdown/vtcc11.md --to ipynb --execute --out .build/tmp.ipynb
-jupyter nbconvert .build/tmp.ipynb --to markdown --output rendered.md --output-dir slides
+python -m render.main
+

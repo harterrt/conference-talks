@@ -4,8 +4,13 @@ from livereload import Server, shell
 server = Server()
 server.watch('slides')
 server.watch(
-    'markdown/*.md',
-    shell('bin/precompile')
+    'output/*.md'
+)
+server.watch(
+    'output/static/*'
+)
+server.watch(
+    'output/static/plots/*'
 )
 
-server.serve(root='.', port=5052)
+server.serve(root='output/', port=5052)
